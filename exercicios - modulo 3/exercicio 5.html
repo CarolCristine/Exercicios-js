@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <section class="container">
+        <p>
+            5) Escreva um programa para ler as dimensões de uma cozinha retangular (comprimento, largura e altura),
+             calcular e escrever a quantidade de caixas de azulejos para se colocar em todas as suas parede
+             (considere que não será descontada a área ocupada por portas e janelas). 
+            Cada caixa de azulejos possui 1,5 m2. 
+        </p>
+        <form action="">
+            <div class="mb-3">
+                <label for="comprimento" class="form-label">comprimento </label>
+                <input type="number" class="form-control" id="comprimento" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="largura" class="form-label">largura </label>
+                <input type="number" class="form-control" id="largura" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="altura" class="form-label">altura</label>
+                <input type="number" class="form-control" id="altura" placeholder="">
+            </div>
+             <div class="mb-3">
+                <button class=" btn btn-primary" type="button" onclick="calculo()">calcular</button>
+            </div>
+        </form>
+
+        <div id="saidaTexto" class="mt-5 container">
+        </div>
+    </section>
+</body>
+
+</html>
+<script>
+    function calculo() {
+        let comprimento = parseFloat(document.querySelector("#comprimento").value);
+        let largura = parseFloat(document.querySelector("#largura").value);
+        let altura =parseFloat(document.querySelector("#altura").value);
+
+        let areaparedes =((comprimento * altura) + (largura * altura)) *2 // em metros quadrados
+        let quantcaixas = areaparedes / 1.5 //total de area dividido pela metragem da caixa 
+
+        document.querySelector("saidatexto").InnerHTML = "Quantidade de caixas" + quantcaixas;
+    }
+</script>
+
+        
