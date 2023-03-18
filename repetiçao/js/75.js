@@ -1,4 +1,4 @@
-function mostrarMultiplos() {
+function mostrarinpares() {
     let saida = "";
 
     for (let numero = 1; numero <= 100; numero = numero + 1) {
